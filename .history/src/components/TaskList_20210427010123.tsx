@@ -15,7 +15,7 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
   
   function handleCreateNewTask() {
-    if(!newTaskTitle)return// se nao tiver title, o código nao continua
+    if(!newTaskTitle)return// se nao tiver title retornar
     const task = {
       id: Math.random(),
       title: newTaskTitle,

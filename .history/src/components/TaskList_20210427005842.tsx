@@ -15,15 +15,16 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
   
   function handleCreateNewTask() {
-    if(!newTaskTitle)return// se nao tiver title, o código nao continua
     const task = {
       id: Math.random(),
       title: newTaskTitle,
       isComplete: false
     }
     setTasks(prevState => [...prevState, task])
-    setNewTaskTitle('');
+    if(task.title ==='')
+      alert("cannot put with empty title")
     
+      setNewTaskTitle('');
     
     
   }

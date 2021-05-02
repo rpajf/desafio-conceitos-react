@@ -11,19 +11,17 @@ interface Task {
 }
 
 export function TaskList() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(['']);
   const [newTaskTitle, setNewTaskTitle] = useState('');
   
   function handleCreateNewTask() {
-    if(!newTaskTitle)return// se nao tiver title, o código nao continua
     const task = {
-      id: Math.random(),
+      id: Math.floor(Math.random() * 10),
       title: newTaskTitle,
       isComplete: false
     }
     setTasks(prevState => [...prevState, task])
     setNewTaskTitle('');
-    
     
     
   }

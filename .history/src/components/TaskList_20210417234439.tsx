@@ -15,15 +15,12 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
   
   function handleCreateNewTask() {
-    if(!newTaskTitle)return// se nao tiver title, o código nao continua
     const task = {
-      id: Math.random(),
+      id: Math.floor(Math.random() * 10),
       title: newTaskTitle,
       isComplete: false
     }
     setTasks(prevState => [...prevState, task])
-    setNewTaskTitle('');
-    
     
     
   }
@@ -43,8 +40,7 @@ export function TaskList() {
 
   function handleRemoveTask(id: number) {
     const removeTask = tasks.filter(task=> task.id !==id)
-    setTasks(removeTask)      
-  }
+    setTasks(removeTask)      }
 
   return (
     <section className="task-list container">
